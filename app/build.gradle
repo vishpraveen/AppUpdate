@@ -1,13 +1,17 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'com.google.gms.google-services'
+// Apply the Crashlytics Gradle plugin
+apply plugin: 'com.google.firebase.crashlytics'
 
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
 
     defaultConfig {
-        applicationId "com.example.appupdatedemo"
+        applicationId 'com.testingapp.appupdatedemo'
         minSdkVersion 23
         targetSdkVersion 29
         versionCode 1
@@ -23,6 +27,12 @@ android {
         }
     }
 
+    testOptions {
+        unitTests {
+            includeAndroidResources = true
+        }
+    }
+
 }
 
 dependencies {
@@ -34,4 +44,30 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    // Dependencies for local unit tests
+    testImplementation 'junit:junit:4.12'
+    testImplementation "org.hamcrest:hamcrest-all:1.3"
+    testImplementation "androidx.arch.core:core-testing:2.1.0"
+    testImplementation "org.robolectric:robolectric:4.3.1"
+
+    // AndroidX Test - JVM testing
+    testImplementation "androidx.test:core-ktx:1.2.0"
+    testImplementation "androidx.test.ext:junit:1.1.1"
+
+    // AndroidX Test - Instrumented testing
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+//    mockito for testing
+    testImplementation 'org.mockito:mockito-core:2.22.0'
+
+//  Material Library
+    implementation 'com.google.android.material:material:1.2.0-alpha06'
+//     Play Core Library
+    implementation 'com.google.android.play:core:1.7.2'
+// add the Firebase SDK for Google Analytics
+    implementation 'com.google.firebase:firebase-analytics:17.4.0'
+    // Add the Firebase SDK for Crashlytics.
+    implementation 'com.google.firebase:firebase-crashlytics:17.0.0'
 }
