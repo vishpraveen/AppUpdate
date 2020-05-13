@@ -2,5 +2,7 @@
     <string name="app_name">App Update Demo</string>
     <string name="update_message">My Downloading App Update</string>
     <string name="app_update">App Update</string>
-    <string name="notification_demo">My APp Update Downloading </string>
+    <string name="notification_demo">My App Update Downloading </string>
+    <string name="check_for_app_update">App Update </string>
+    <string name="check_for_app_update_disable">App Update disable</string>
 </resources>

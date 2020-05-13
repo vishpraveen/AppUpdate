@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut
+        android:shortcutId="check_update"
+        android:enabled="true"
+        android:icon="@drawable/ic_update"
+        android:shortcutShortLabel="@string/app_update"
+        android:shortcutLongLabel="@string/check_for_app_update"
+        android:shortcutDisabledMessage="@string/check_for_app_update_disable">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetPackage="com.testingapp.appupdatedemo"
+            android:targetClass="com.testingapp.appupdatedemo.MainActivity"/>
+        <categories android:name="android.shortcut.update"/>
+    </shortcut>
+</shortcuts>

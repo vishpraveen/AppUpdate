@@ -17,6 +17,9 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+<!--            metadata for shortcut menu-->
+            <meta-data android:name="android.app.shortcuts"
+                android:resource="@xml/app_update_shortcut"/>
         </activity>
     </application>
 
